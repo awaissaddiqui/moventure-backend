@@ -1,0 +1,49 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2021
+    },
+
+    "extends": [
+        "plugin:unicorn/all"
+    ],
+
+    "plugins": [
+        "unicorn"
+    ],
+
+    "rules":  {
+        "indent": ["error", 4], // Enforce 4 spaces for indentation
+        "no-tabs": "error", // Disallow tabs for indentation
+        "camelcase": "error", // Enforce camelCase naming convention
+        "consistent-this": ["error", "self"], // Enforce using 'self' as the alias for 'this'
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }], // Enforce function declaration style
+        "no-var": "error", // Disallow 'var' declarations
+        "prefer-const": "error", // Prefer 'const' over 'let' when variables don't reassign
+        "no-unused-vars": "warn",         // Warn about unused variables
+        "quotes": ["error", "single"], // Enforce single quotes for strings
+        "semi": ["error", "always"], // Enforce using semicolons
+        "comma-dangle": ["error", "always-multiline"], // Enforce trailing commas in multiline objects/arrays
+        "no-multi-spaces": "error",       // Disallow multiple spaces
+        "no-trailing-spaces": "error",    // Disallow trailing spaces
+        "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 0 }],  // Allow up to 2 consecutive empty lines
+        
+        "unicorn/empty-brace-spaces": "error",
+        "unicorn/prefer-module": "error",
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "kebabCase",
+                "ignore": [
+                    "^(?:[A-Z][a-z]*-)*[A-Z][a-z]*(?:-[A-Z][a-z]*)*(?:\\.test|\\.spec)?\\.js$" // A pascal + kebab case like Some-Pascal-Kebab.js or .test.js or .spec.js
+                ]
+            }
+        ]
+    }
+}
